@@ -11,8 +11,9 @@
  */
 
 function sayHello() {
-let helloOutput = document.getElementById('canvas1').getContext('2d');
-helloOutput.clearRect(0, 0, canvas.width, canvas.height)
+let helloOutput = document.getElementById('canvas1');
+const contextOne = helloOutput.getContext('2d');
+contextOne.clearRect(0, 0, helloOutput.width, helloOutput.height);
 helloOutput.font = '48px sans-serif';
 helloOutput.strokeText('Hello, World!', 10, 50);
 }
@@ -46,8 +47,9 @@ function drawRectangle() {
   let width = prompt("Width:");
   let x = prompt("X:");
   let y = prompt("Y:");
-  let rectangleOutput = document.getElementById('canvas2').getContext('2d');
-  rectangleOutput.clearRect(0, 0, canvas.width, canvas.height);
+  let rectangleOutput = document.getElementById('canvas2');
+  const contextTwo = rectangleOutput.getContext('2d');
+  contextTwo.clearRect(0, 0, rectangleOutput.width, rectangleOutput.height);
 
   height = Number(height);
   width = Number(width);
