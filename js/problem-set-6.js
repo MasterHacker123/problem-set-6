@@ -11,7 +11,10 @@
  */
 
 function sayHello() {
-
+let helloOutput = document.getElementById('canvas1').getContext('2d');
+helloOutput.clearRect(0, 0, helloOutput.width, helloOutput.height)
+helloOutput.font = '48px sans-serif';
+helloOutput.strokeText('Hello, World!', 10, 50);
 }
 
 /*
@@ -38,6 +41,32 @@ function sayHello() {
  */
 
 function drawRectangle() {
+
+  let height = prompt("Height:");
+  let width = prompt("Width:");
+  let x = prompt("X:");
+  let y = prompt("Y:");
+  let rectangleOutput = document.getElementById('canvas2').getContext('2d');
+  rectangleOutput.clearRect(0, 0, rectangleOutput.width, rectangleOutput.height);
+
+  height = Number(height);
+  width = Number(width);
+  x = Number(x);
+  y = Number(y);
+
+  if (isNaN(height) == true || isNaN(width) == true || isNaN(x) == true || isNaN(y) == true) {
+    alert("One of your inputs is not a number.");
+  } else if (height < 1) {
+    alert("Your height is too small.");
+  } else if (width < 1) {
+    alert("Your width is too small.");
+  } else if (x < 5) {
+    alert("Your x-coordinate is too small.");
+  } else if (y < 5) {
+    alert("Your y-coordinate is too small.");
+  } else {
+    rectangleOutput.strokeRect(x, y, width, height);
+  }
 
 }
 
@@ -67,7 +96,14 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
-
+  let color = prompt("Color:");
+  let colorOutput = document.getElementById('canvas3').getContext('2d');
+  if (color != "black" && color != "blue" && color != "green" && color != "orange" && color != "purple" && color != "red" && color != "yellow") {
+    alert(color + " is not a supported color.");
+  } else {
+    colorOutput.fillStyle = color;
+    colorOutput.fillRect(10, 10, 100, 50);
+  }
 }
 
 /*
