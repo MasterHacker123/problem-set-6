@@ -11,11 +11,11 @@
  */
 
 function sayHello() {
-let helloOutput = document.getElementById('canvas1');
-const contextOne = helloOutput.getContext('2d');
-contextOne.clearRect(0, 0, helloOutput.width, helloOutput.height);
-helloOutput.font = '48px sans-serif';
-helloOutput.strokeText('Hello, World!', 10, 50);
+let canvas = document.getElementById('canvas1');
+const context = canvas.getContext('2d');
+context.clearRect(0, 0, canvas.width, canvas.height);
+context.font = '48px sans-serif';
+context.strokeText('Hello, World!', 10, 50);
 }
 
 /*
@@ -47,9 +47,8 @@ function drawRectangle() {
   let width = prompt("Width:");
   let x = prompt("X:");
   let y = prompt("Y:");
-  let rectangleOutput = document.getElementById('canvas2');
-  const contextTwo = rectangleOutput.getContext('2d');
-  contextTwo.clearRect(0, 0, rectangleOutput.width, rectangleOutput.height);
+  let canvas = document.getElementById('canvas2');
+  const context = canvas.getContext('2d');
 
   height = Number(height);
   width = Number(width);
@@ -69,7 +68,6 @@ function drawRectangle() {
   } else {
     rectangleOutput.strokeRect(x, y, width, height);
   }
-
 }
 
 /*
@@ -138,7 +136,44 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
+  let sideOne = prompt("Side 1:");
+  let sideTwo = prompt("Side 2:");
+  let sideThree = prompt("Side 3:");
+  let sideArr = new Array();
 
+  let canvas = document.getElementById('canvas4');
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  sideOne = Number(sideOne);
+  sideTwo = Number(sideTwo);
+  sideThree = Number(sideThree);
+
+  sideArr.push(sideOne);
+  sideArr.push(sideTwo);
+  sideArr.push(sideThree);
+  sideArr.sort(function(a, b){return a-b});
+  let one = sideArr[0];
+  let two = sideArr[1];
+
+
+  if (isNaN(sideOne) == true || isNaN(sideTwo) == true || isNaN(sideThree) == true) {
+    alert("One of your inputs is not a number.");
+  } else if (sideOne <= 0 || sideTwo <= 0 || sideThree <= 0) {
+    alert("That is not a valid triangle.");
+  } else if ((sideArr[0] ** 2) + (sideArr[1] ** 2) != (sideArr[2] ** 2)){
+    alert("That is not a valid triangle.");
+  } else if ((sideArr[0] + 10) > canvas.height || (sideArr[0] + 10) > canvas.width ) {
+    alert("The triangle will not fit on the canvas.");
+  } else {
+    context.beginPath();
+    context.moveTo(10, 10);
+    context.lineTo(10, 10 + one);
+    context.lineTo(10 + two, 10 + one);
+    context.closePath();
+    context.stroke();
+    lineWidth = 1;
+  }
 }
 
 /*
