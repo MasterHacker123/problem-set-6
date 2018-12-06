@@ -196,7 +196,20 @@ function drawTriangle() {
  */
 
 function drawSmileyFace() {
-
+  let radius = prompt("Please enter a radius:");
+  let canvas = document.getElementById('canvas5');
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  radius = Number(radius);
+  context.beginPath();
+  context.arc(radius + 10, radius + 10, radius, 0 * Math.PI, 2 * Math.PI);
+  context.moveTo(1.7 * radius + 10);
+  context.arc(radius + 10, radius + 10, 0.7 * radius, 0 * Math.PI, Math.PI);
+  context.moveTo()
+  context.arc(0.9 * radius, 1.1 * radius, 0.1 * radius, 0 * Math.PI, 2 * Math.PI);
+  context.closePath();
+  context.stroke();
+  lineWidth = 1;
 }
 
 /*
