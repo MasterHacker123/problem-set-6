@@ -66,7 +66,7 @@ function drawRectangle() {
   } else if (y < 5) {
     alert("Your y-coordinate is too small.");
   } else {
-    rectangleOutput.strokeRect(x, y, width, height);
+    context.strokeRect(x, y, width, height);
   }
 }
 
@@ -201,15 +201,25 @@ function drawSmileyFace() {
   const context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
   radius = Number(radius);
-  context.beginPath();
-  context.arc(radius + 10, radius + 10, radius, 0 * Math.PI, 2 * Math.PI);
-  context.moveTo(1.7 * radius + 10);
-  context.arc(radius + 10, radius + 10, 0.7 * radius, 0 * Math.PI, Math.PI);
-  context.moveTo()
-  context.arc(0.9 * radius, 1.1 * radius, 0.1 * radius, 0 * Math.PI, 2 * Math.PI);
-  context.closePath();
-  context.stroke();
-  lineWidth = 1;
+  if (isNaN(radius) == true) {
+    alert("Your input is not a number.");
+  } else if (radius < 1) {
+    alert("Your radius is too small.");
+  } else if (radius > 250){
+    alert("The smiley face will not fit on the canvas.");
+  } else {
+    context.beginPath();
+    context.arc(radius + 10, radius + 10, radius, 0 * Math.PI, 2 * Math.PI);
+    context.moveTo(1.7 * radius + 10, radius + 10);
+    context.arc(radius + 10, radius + 10, 0.7 * radius, 0 * Math.PI, Math.PI);
+    context.moveTo(0.8 * radius + 10, 0.7 * radius + 10);
+    context.arc(0.7 * radius + 10, 0.7 * radius + 10, 0.1 * radius, 0 * Math.PI, 2 * Math.PI);
+    context.moveTo(1.4 * radius + 10, 0.7 * radius + 10);
+    context.arc(1.3 * radius + 10, 0.7 * radius + 10, 0.1 * radius, 0 * Math.PI, 2 * Math.PI);
+    context.closePath();
+    context.stroke();
+    lineWidth = 1;
+  }
 }
 
 /*
@@ -231,6 +241,36 @@ function drawSmileyFace() {
  */
 
 function drawStar() {
+let outerRadius = prompt("Outer Radius:");
+let innerRadius = prompt("Inner Radius:");
+let canvas = document.getElementById('canvas6');
+const context = canvas.getContext('2d');
+context.clearRect(0, 0, canvas.width, canvas.height);
+outerRadius = Number(outerRadius);
+innerRadius = Number(innerRadius);
+if (isNaN(outerRadius) == true || isNaN(innerRadius) == true) {
+  alert("One of your inputs is not a number.");
+} else if (outerRadius < 2) {
+  alert("Your outer radius is too small.");
+} else if (innerRadius < 1) {
+  alert("Your inner radius is too small.");
+} else if (outerRadius <= innerRadius) {
+  alert("Your outer radius must be larger than your inner radius.")
+} else {
+  context.beginPath();
+  context.moveTo(125, 125 - outerRadius);
+  let x = 0;
+  let angle = 0 * Math.PI;
+  while (x < 5) {
+    context.lineTo(Math.cos(1.3 * Math.PI - angle) * innerRadius + 125, Math.sin(1.3 * Math.PI - angle) * innerRadius + 125);
+    context.lineTo(Math.cos(1.1 * Math.PI - angle) * outerRadius + 125, Math.sin(1.1 * Math.PI - angle) * outerRadius + 125);
+    angle = angle + 0.4 * Math.PI;
+    x = x + 1;
+  }
+  context.closePath();
+  context.stroke();
+  lineWidth = 1;
+}
 
 }
 
