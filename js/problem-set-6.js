@@ -290,7 +290,11 @@ if (isNaN(outerRadius) == true || isNaN(innerRadius) == true) {
  */
 
 function drawStopSign() {
-
+  let radius = 40 / Math.sin(0.125 * Math.PI);
+  let canvas = document.getElementById('canvas7');
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  
 }
 
 /*
