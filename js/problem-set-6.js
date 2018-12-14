@@ -294,7 +294,22 @@ function drawStopSign() {
   let canvas = document.getElementById('canvas7');
   const context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
-  
+  context.beginPath();
+  context.moveTo(Math.cos(0.125 * Math.PI) * radius + 110, Math.sin(0.125 * Math.PI) * radius + 110);
+  let x = 0;
+  let angle = 0.25 * Math.PI;
+  while (x < 8) {
+    context.lineTo(Math.cos(0.125 * Math.PI + angle) * radius + 110, Math.sin(0.125 * Math.PI + angle) * radius + 110);
+    angle = angle + 0.25 * Math.PI;
+    x = x + 1;
+  }
+  context.closePath();
+  context.fillStyle = "red";
+  context.fill();
+  context.font = "65px Arial";
+  context.fillStyle = "white";
+  context.fillText("STOP", 22, 130);
+  lineWidth = 1;
 }
 
 /*
@@ -316,7 +331,38 @@ function drawStopSign() {
  */
 
 function drawPyramid() {
+  let length = prompt("Length:");
+  length = Number(length);
+  let canvas = document.getElementById('canvas8');
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
 
+  if (isNaN(length) == true) {
+      alert("Your input is not a number.");
+  } else if (length > 100.2) {
+      alert("The pyramid will not fit on the canvas.");
+  } else {
+      context.beginPath();
+      let x = 0;
+      let limit = 5;
+      let xOffset = 0;
+      let yOffset = 0;
+      let y = 0;
+      let initialOffset = 0;
+      while (y < 5) {
+        while (x < limit) {
+          context.strokeRect(10 + xOffset + initialOffset, canvas.height - 10 - length - yOffset, length, length);
+          xOffset = xOffset + length;
+          x++;
+        }
+        y++;
+        x = 0;
+        xOffset = 0;
+        yOffset += length;
+        limit -= 1;
+        initialOffset += (length / 2);
+      }
+  }
 }
 
 /*
