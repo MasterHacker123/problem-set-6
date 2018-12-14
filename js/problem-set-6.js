@@ -376,7 +376,7 @@ function drawPyramid() {
  * should be gray. Give the leftmost point of your house an X-coordinate of
  * 150, and the bottom of your house a Y-coordinate of 10 less than the
  * height of the canvas.
- *
+ * 760 h by 1024 w
  * Support the following front door and/or house colors:
  *     - blue
  *     - brown
