@@ -98,12 +98,16 @@ function drawRectangle() {
 
 function drawColoredRectangle() {
   let color = prompt("Color:");
-  let colorOutput = document.getElementById('canvas3').getContext('2d');
+  
+  let canvas = document.getElementById('canvas3');
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
   if (color != "black" && color != "blue" && color != "green" && color != "orange" && color != "purple" && color != "red" && color != "yellow") {
     alert(color + " is not a supported color.");
   } else {
-    colorOutput.fillStyle = color;
-    colorOutput.fillRect(10, 10, 100, 50);
+    context.fillStyle = color;
+    context.fillRect(10, 10, 100, 50);
   }
 }
 
