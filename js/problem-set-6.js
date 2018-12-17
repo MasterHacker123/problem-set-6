@@ -210,7 +210,7 @@ function drawSmileyFace() {
     alert("Your input is not a number.");
   } else if (radius < 1) {
     alert("Your radius is too small.");
-  } else if (radius > 250){
+  } else if (radius > 250.5){
     alert("The smiley face will not fit on the canvas.");
   } else {
     context.beginPath();
