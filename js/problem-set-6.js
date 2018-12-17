@@ -395,5 +395,45 @@ function drawPyramid() {
  */
 
 function drawHouse() {
+  let color1 = prompt("House Color:");
+  let color2 = prompt("Front Door Color:");
+  let canvas = document.getElementById('canvas9');
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  let colorOutput = document.getElementById('canvas3').getContext('2d');
+  if (color1 != "black" && color1 != "blue" && color1 != "green" && color1 != "orange" && color1 != "purple" && color1 != "red" && color1 != "yellow") {
+    alert("One of your colors is not supported.");
+  } else if (color2 != "black" && color2 != "blue" && color2 != "green" && color2 != "orange" && color2 != "purple" && color2 != "red" && color2 != "yellow") {
+    alert("One of your colors is not supported.");
+  } else {
+    context.beginPath();
+    context.fillStyle = color1;
+    context.fillRect(150, canvas.height / 3, canvas.width - 300, 2 * canvas.height / 3 - 10);
+    context.closePath();
+    lineWidth = 10;
+
+    context.beginPath();
+    context.moveTo(150, canvas.height / 3);
+    context.lineTo(canvas.width / 2, 10);
+    context.lineTo(canvas.width - 150, canvas.height / 3);
+    context.closePath();
+    context.fillStyle = "gray";
+    context.fill();
+    lineWidth = 10;
+
+    context.beginPath();
+    context.fillStyle = "LightBlue";
+    context.fillRect(275, canvas.height / 3 + 75, 75, 75);
+    context.closePath();
+
+    context.beginPath();
+    context.moveTo(150, canvas.height / 3);
+    context.lineTo(canvas.width / 2, 10);
+    context.lineTo(canvas.width - 150, canvas.height / 3);
+    context.closePath();
+    context.fillStyle = "gray";
+    context.fill();
+  }
 
 }
