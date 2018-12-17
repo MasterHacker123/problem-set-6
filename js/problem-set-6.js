@@ -410,8 +410,9 @@ function drawHouse() {
     context.beginPath();
     context.fillStyle = color1;
     context.fillRect(150, canvas.height / 3, canvas.width - 300, 2 * canvas.height / 3 - 10);
+    context.strokeRect(150, canvas.height / 3, canvas.width - 300, 2 * canvas.height / 3 - 10);
     context.closePath();
-    lineWidth = 10;
+    lineWidth = 4;
 
     context.beginPath();
     context.moveTo(150, canvas.height / 3);
@@ -420,13 +421,37 @@ function drawHouse() {
     context.closePath();
     context.fillStyle = "gray";
     context.fill();
-    lineWidth = 10;
+    context.stroke();
+    lineWidth = 4;
 
     context.beginPath();
     context.fillStyle = "LightBlue";
     context.fillRect(275, canvas.height / 3 + 75, 75, 75);
+    context.strokeRect(275, canvas.height / 3 + 75, 75, 75);
     context.closePath();
+    lineWidth = 4;
+    
+    context.beginPath();
+    context.fillStyle = "LightBlue";
+    context.fillRect(275, canvas.height - 50, 75, 75);
+    context.strokeRect(275, canvas.height - 50, 75, 75);
+    context.closePath();
+    lineWidth = 4;
 
+    context.beginPath();
+    context.fillStyle = "LightBlue";
+    context.fillRect(canvas.width - 275, canvas.height - 50, 75, 75);
+    context.strokeRect(canvas.width - 275, canvas.height - 50, 75, 75);
+    context.closePath();
+    lineWidth = 4;
+    
+    context.beginPath();
+    context.fillStyle = "LightBlue";
+    context.fillRect(canvas.width - 275, canvas.height / 3 + 75, 75, 75);
+    context.strokeRect(canvas.width - 275, canvas.height / 3 + 75, 75, 75);
+    context.closePath();
+    lineWidth = 4;
+    
     context.beginPath();
     context.moveTo(150, canvas.height / 3);
     context.lineTo(canvas.width / 2, 10);
