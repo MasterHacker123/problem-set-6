@@ -49,6 +49,7 @@ function drawRectangle() {
   let y = prompt("Y:");
   let canvas = document.getElementById('canvas2');
   const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
 
   height = Number(height);
   width = Number(width);
