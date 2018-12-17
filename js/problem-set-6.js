@@ -452,21 +452,21 @@ function drawHouse() {
     
     context.beginPath();
     context.fillStyle = "LightBlue";
-    context.fillRect(canvas.width - 375, canvas.height / 3 + 75, 75, 75);
-    context.strokeRect(canvas.width - 375, canvas.height / 3 + 75, 75, 75);
+    context.fillRect(canvas.width - 350, canvas.height / 3 + 75, 75, 75);
+    context.strokeRect(canvas.width - 350, canvas.height / 3 + 75, 75, 75);
     context.closePath();
     lineWidth = 4;
     
     context.beginPath();
     context.fillStyle = color2;
-    context.fillRect(canvas.width / 2 - 40, canvas.height - 160, 80, 150);
-    context.strokeRect(canvas.width / 2 - 40, canvas.height - 160, 80, 150);
+    context.fillRect(canvas.width / 2 - 60, canvas.height - 160, 120, 150);
+    context.strokeRect(canvas.width / 2 - 60, canvas.height - 160, 120, 150);
     context.closePath();
     lineWidth = 4;
     
     context.beginPath();
     context.fillStyle = "yellow";
-    context.arc(canvas.width / 2 + 25, canvas.height - 85, 6, 0 * Math.PI, 2 * Math.PI);
+    context.arc(canvas.width / 2 + 40, canvas.height - 85, 7, 0 * Math.PI, 2 * Math.PI);
     context.fill();
     context.stroke();
     lineWidth = 4;
