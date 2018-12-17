@@ -407,9 +407,9 @@ function drawHouse() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 
   let colorOutput = document.getElementById('canvas3').getContext('2d');
-  if (color1 != "black" && color1 != "blue" && color1 != "green" && color1 != "orange" && color1 != "purple" && color1 != "red" && color1 != "yellow") {
+  if (color1 != "brown" && color1 != "blue" && color1 != "green" && color1 != "orange" && color1 != "purple" && color1 != "red" && color1 != "yellow") {
     alert("One of your colors is not supported.");
-  } else if (color2 != "black" && color2 != "blue" && color2 != "green" && color2 != "orange" && color2 != "purple" && color2 != "red" && color2 != "yellow") {
+  } else if (color2 != "brown" && color2 != "blue" && color2 != "green" && color2 != "orange" && color2 != "purple" && color2 != "red" && color2 != "yellow") {
     alert("One of your colors is not supported.");
   } else {
     context.beginPath();
