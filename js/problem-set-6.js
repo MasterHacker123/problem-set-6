@@ -161,9 +161,9 @@ function drawTriangle() {
   if (isNaN(sideOne) == true || isNaN(sideTwo) == true || isNaN(sideThree) == true) {
     alert("One of your inputs is not a number.");
   } else if (sideOne <= 0 || sideTwo <= 0 || sideThree <= 0) {
-    alert("That is not a valid triangle.");
+    alert("This is not a valid triangle.");
   } else if ((sideArr[0] ** 2) + (sideArr[1] ** 2) != (sideArr[2] ** 2)){
-    alert("That is not a valid triangle.");
+    alert("This is not a valid triangle.");
   } else if ((sideArr[0] + 10) > canvas.height || (sideArr[0] + 10) > canvas.width ) {
     alert("The triangle will not fit on the canvas.");
   } else {
