@@ -66,6 +66,8 @@ function drawRectangle() {
     alert("Your x-coordinate is too small.");
   } else if (y < 5) {
     alert("Your y-coordinate is too small.");
+  } else if (x + width >= 1024 || y + height >= 512) {
+    alert("The rectangle will not fit on the canvas.");
   } else {
     context.strokeRect(x, y, width, height);
   }
